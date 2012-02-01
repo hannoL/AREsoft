@@ -1,0 +1,31 @@
+#This is the gitignore file for AREsoft
+#this belongs to the ARE VM from the Honeynet Project
+########################################################
+
+#Ignore everything
+#**/*
+#tools/*
+#*.txt
+.*
+*
+#But do not ignore ARE things
+#Desktop/README.txt
+!Desktop/
+Desktop/*
+!Desktop/README.txt
+#/home/android
+!Firefox_wallpaper.png
+!.gitignore
+#tools
+!tools/
+!tools/*
+!tools/**/*
+#graph
+!graph/
+!graph/*
+!graph/**/*
+#deps
+!deps/
+!deps/*
+!deps/**/*
+

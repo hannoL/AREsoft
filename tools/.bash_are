@@ -1,0 +1,3 @@
+#Submodul for .bashrc
+#ARE of The Honeynet Project
+export PATH=${PATH}:/home/android/tools/android/android-sdk-linux_x86/tools/:/home/android/tools/apktool

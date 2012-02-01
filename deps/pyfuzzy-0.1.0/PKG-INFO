@@ -1,0 +1,23 @@
+Metadata-Version: 1.0
+Name: pyfuzzy
+Version: 0.1.0
+Summary: pyfuzzy: Python Fuzzy Utilities
+Home-page: http://pyfuzzy.sourceforge.net
+Author: Rene Liebscher
+Author-email: R.Liebscher@gmx.de
+License: LGPL+
+Download-URL: http://sourceforge.net/project/showfiles.php?group_id=59160&package_id=55171
+Description: pyfuzzy is a python module for working with fuzzy sets
+        (for example for controllers or other similar stuff,
+        it can be also used for decision making in business.)
+        
+Platform: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: OS Independent
+Classifier: 

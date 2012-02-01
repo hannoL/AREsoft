@@ -1,0 +1,25 @@
+Release 0.1.0 (October 18th, 2009)
+------------------------------
+  * added encoding lines
+  * added license text to all files
+  * added fuzzy.doc for documentation
+  * defuzzification methods are now separate in fuzzy.defuzzify
+  * fuzzification methods are now separate in fuzzy.fuzzify
+  * added several complement classes in fuzzy.complement
+  * added more documentation in epydoc format
+  * made several attributes to real properties (no longer __getattr__/__setattr__)
+  * added package fuzzy.storage.fcl to read FCL files (using ANTLR)
+  * code cleanup according to pylint report
+  * moved fuzzui in separate repository
+
+Release 0.0.2 (April 22th, 2003)
+------------------------------
+  * Added OutputVariable, OutputVariableDict, InputVariable, InputVariableDict
+  * Added min, max, description and unit to Variable
+
+Release 0.0.1 (February 14th, 2003)
+------------------------------
+  * initial public release
+
+
+$Id: CHANGES.txt,v 1.8 2009/10/18 19:52:23 rliebscher Exp $
