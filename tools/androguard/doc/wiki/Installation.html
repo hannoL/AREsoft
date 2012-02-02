@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+ <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/androguard/wiki/Installation">
+ 
+ <script src="Installation_files/googleapis.js"></script><script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"profileUrl":null,"token":null,"assetHostPath":"http://www.gstatic.com/codesite/ph","domainName":null,"assetVersionPath":"http://www.gstatic.com/codesite/ph/17856622392391512803","projectHomeUrl":"/p/androguard","relativeBaseUrl":"","projectName":"androguard","loggedInUserEmail":null};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ _gaq.push(
+ ['projectTracker._setAccount', 'UA-22757360-2'],
+ ['projectTracker._trackPageview']);
+ 
+ 
+ </script>
+ 
+ 
+ <title>Installation - 
+ androguard -
+ 
+ 
+ Reverse engineering, Malware and goodware analysis of Android applications ... and more ! - Google Project Hosting
+ </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link type="text/css" rel="stylesheet" href="Installation_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="Installation_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="http://code.google.com/feeds/p/androguard/hgchanges/basic?repo=wiki&amp;path=/Installation.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17856622392391512803/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+<script src="Installation_files/ga.js" async="" type="text/javascript"></script></head><body class="t6">
+<script type="text/javascript">
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px;"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+
+ <table style="padding: 0px; margin: 0px 0px 10px; width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 58px;">
+ 
+ <td id="plogo">
+ <link itemprop="url" href="http://code.google.com/p/androguard">
+ <a href="http://code.google.com/p/androguard/">
+ 
+ 
+ <img src="Installation_files/logo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em;">
+ 
+ <div id="pname">
+ <a href="http://code.google.com/p/androguard/"><span itemprop="name">androguard</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="http://code.google.com/p/androguard/"><span itemprop="description">Reverse engineering, Malware and goodware analysis of Android applications ... and more !</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space: nowrap; text-align: right; vertical-align: bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" type="text">
+ 
+ <input name="projectsearch" value="Search projects" type="submit">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="http://code.google.com/p/androguard/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+<table class="st" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/androguard/w/list" method="GET" style="display: inline;">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1">&nbsp;All wiki pages</option>
+ <option value="3">&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4">&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input size="38" id="searchq" name="q" autocomplete="off" type="text"></span>
+ 
+ 
+ 
+ <input value="Search" type="submit">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="bevel-right" valign="top" align="right"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol">
+
+ 
+<!-- IE -->
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align: top; padding-left: 5px;">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size: 120%; font-weight: bold;">Installation</span>
+ &nbsp;
+ <div> 
+ 
+ 
+ <br>
+ 
+ <a class="label" style="padding-top: 2px;" href="http://code.google.com/p/androguard/w/list?q=label:Featured" title="Listed on project home page">Featured</a>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float: right;">
+ Updated <span title="Fri Oct 14 02:12:59 2011">
+ Oct 14 (4 days ago)</span>
+ 
+ by <a style="white-space: nowrap;" href="http://code.google.com/u/115278253733459388131/">anthony....@gmail.com</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <h1><a name="Installation"></a>Installation<a href="#Installation" class="section_anchor"></a></h1><h2><a name="Download"></a>Download<a href="#Download" class="section_anchor"></a></h2><p>You can the latest development version : </p><pre class="prettyprint"><span class="pln">hg clone https</span><span class="pun">:</span><span class="com">//androguard.googlecode.com/hg/ androguard </span></pre><h2><a name="Requirements"></a>Requirements<a href="#Requirements" class="section_anchor"></a></h2><ul><li><a href="http://www.python.org/" rel="nofollow">&gt;= python 2.6</a> </li><li><a href="https://networkx.lanl.gov/trac" rel="nofollow">networkx</a> please install the mercurial version </li><li><a href="http://ipython.scipy.org/" rel="nofollow">ipython</a> for androlyze </li><li><a href="https://bitbucket.org/haypo/python-ptrace/wiki/Home" rel="nofollow">python-ptrace</a> for androdump.py </li><li><a href="http://code.google.com/p/pydot" rel="nofollow">pydot</a> for androdd.py or method2 methods. </li><li><a href="http://www.chilkatsoft.com/" rel="nofollow">chilkat</a> can be used to unzip APK application, otherwise the zip python module is used (module apk.py) </li><li><a href="https://github.com/ahupp/python-magic" rel="nofollow">magic</a> is used in method get_files_types in APK module to found files types (module apk.py) </li><li><a href="http://pyfuzzy.sourceforge.net/" rel="nofollow">pyfuzzy</a> is used to calculate risk indicator (module risk.py) </li><li><a href="http://psyco.sourceforge.net/" rel="nofollow">psyco</a> is used to accelerate androguard, but it's not mandatory to install it. </li></ul><p>For
+ now, androsim.py + androdiff.py + androsign.py + androcsign.py are only
+ available for linux 32 bits. But you can compile librairies to use 
+them. But you must have the following libraries on your system : </p><ul><li><a href="http://bzip.org/" rel="nofollow">bzip2</a> </li><li><a href="http://zlib.net/" rel="nofollow">zlib</a> </li><li><a href="http://tukaani.org/xz/" rel="nofollow">xz</a> </li><li><a href="http://code.google.com/p/snappy/" rel="nofollow">snappy</a> </li><li><a href="http://code.google.com/p/google-sparsehash/" rel="nofollow">sparsehash</a> </li><li><a href="http://www.python.org/" rel="nofollow">python-dev</a> </li></ul><p>You can compile librairies direcly with the Makefile in the root directory : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ make</span></pre><h2><a name="Run_tools"></a>Run tools<a href="#Run_tools" class="section_anchor"></a></h2><p>After the installation of requirements, you can direcly run the tools in the main directory of androguard. </p><p>Examples : </p><pre class="prettyprint"><span class="pln">$ </span><span class="pun">./</span><span class="pln">demos</span><span class="pun">/</span><span class="pln">dalvikvm_format_1</span><span class="pun">.</span><span class="pln">py<br>$ </span><span class="pun">./</span><span class="pln">androlyze</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i </span><span class="pun">~</span><span class="str">/Téléchargements/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">rovio</span><span class="pun">.</span><span class="pln">angrybirdsseasons</span><span class="pun">-</span><span class="lit">1.apk</span><span class="pln"> </span><span class="pun">-</span><span class="pln">m </span><span class="pun">.</span><span class="pln"> </span><span class="pun">-</span><span class="pln">p</span></pre><p>So, you have few demos in the demos directory, and all tests are in tests directory. </p>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">►</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation">Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input name="sequence_num" value="" type="hidden">
+ <input name="create_time" value="" type="hidden">
+ <input name="mode" value="" type="hidden">
+ <input name="pagename" value="Installation" type="hidden">
+ <input name="token" value="" type="hidden">
+ </form>
+
+
+
+ <script src="Installation_files/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="Installation_files/dit_scripts.js"></script>
+
+
+<script type="text/javascript" src="Installation_files/plusone.js">
+</script>
+
+  
+ 
+ 
+ <script type="text/javascript" src="Installation_files/ph_core.js"></script>
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="Installation_files/codesite_product_dictionary_ph.js"></script>
+</div> 
+<div id="footer" dir="ltr">
+ <div class="text">
+ ©2011 Google -
+ <a href="http://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="http://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+ 
+ 
+
+
+ 
+ <div style="display: none;" id="menuDiv-projects-dropdown" class="menuDiv instance0"><div class="menuCategory controls"><a href="http://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation&amp;amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FInstallation" style="display: block;" class="menuItem">Sign in to see your favorites</a><hr class="menuSeparator"><a href="http://code.google.com/more/" style="display: block;" class="menuItem">Find developer products...</a><a href="http://code.google.com/hosting/" style="display: block;" class="menuItem">Find open source projects...</a></div></div></body></html>

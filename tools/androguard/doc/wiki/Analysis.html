@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+ <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/androguard/wiki/Analysis">
+ 
+ <script src="Analysis_files/googleapis.js"></script><script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"profileUrl":null,"token":null,"assetHostPath":"http://www.gstatic.com/codesite/ph","domainName":null,"assetVersionPath":"http://www.gstatic.com/codesite/ph/17856622392391512803","projectHomeUrl":"/p/androguard","relativeBaseUrl":"","projectName":"androguard","loggedInUserEmail":null};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ _gaq.push(
+ ['projectTracker._setAccount', 'UA-22757360-2'],
+ ['projectTracker._trackPageview']);
+ 
+ 
+ </script>
+ 
+ 
+ <title>Analysis - 
+ androguard -
+ 
+ 
+ Reverse engineering, Malware and goodware analysis of Android applications ... and more ! - Google Project Hosting
+ </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link type="text/css" rel="stylesheet" href="Analysis_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="Analysis_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="http://code.google.com/feeds/p/androguard/hgchanges/basic?repo=wiki&amp;path=/Analysis.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17856622392391512803/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+<script src="Analysis_files/ga.js" async="" type="text/javascript"></script></head><body class="t6">
+<script type="text/javascript">
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px;"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+
+ <table style="padding: 0px; margin: 0px 0px 10px; width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 58px;">
+ 
+ <td id="plogo">
+ <link itemprop="url" href="http://code.google.com/p/androguard">
+ <a href="http://code.google.com/p/androguard/">
+ 
+ 
+ <img src="Analysis_files/logo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em;">
+ 
+ <div id="pname">
+ <a href="http://code.google.com/p/androguard/"><span itemprop="name">androguard</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="http://code.google.com/p/androguard/"><span itemprop="description">Reverse engineering, Malware and goodware analysis of Android applications ... and more !</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space: nowrap; text-align: right; vertical-align: bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" type="text">
+ 
+ <input name="projectsearch" value="Search projects" type="submit">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="http://code.google.com/p/androguard/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+<table class="st" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/androguard/w/list" method="GET" style="display: inline;">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1">&nbsp;All wiki pages</option>
+ <option value="3">&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4">&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input size="38" id="searchq" name="q" autocomplete="off" type="text"></span>
+ 
+ 
+ 
+ <input value="Search" type="submit">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="bevel-right" valign="top" align="right"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol">
+
+ 
+<!-- IE -->
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align: top; padding-left: 5px;">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size: 120%; font-weight: bold;">Analysis</span>
+ &nbsp;
+ <div> 
+ 
+ 
+ <br>
+ 
+ <a class="label" style="padding-top: 2px;" href="http://code.google.com/p/androguard/w/list?q=label:Featured" title="Listed on project home page">Featured</a>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float: right;">
+ Updated <span title="Sun Sep 18 06:36:26 2011">
+ Sep 18, 2011</span>
+ 
+ by <a style="white-space: nowrap;" href="http://code.google.com/u/115278253733459388131/">anthony....@gmail.com</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <p></p><ul><li><a href="#Analysis">Analysis</a></li><ul><li><a href="#CFG">CFG</a></li><li><a href="#Information">Information</a></li><ul><li><a href="#Packages">Packages</a></li><li><a href="#Fields">Fields</a></li></ul><li><a href="#Permissions">Permissions</a></li><li><a href="#Signatures">Signatures</a></li><li><a href="#Risk_Indicator">Risk Indicator</a></li></ul></ul> <h1><a name="Analysis"></a>Analysis<a href="#Analysis" class="section_anchor"></a></h1><p>The <a href="http://code.google.com/p/androguard/source/browse/core/analysis/analysis.py" rel="nofollow">analysis</a> module can help you to play with dex/class format, with more high level information. </p><p>The first thing to do is to open your file and call the main analysis class : </p><pre class="prettyprint"><span class="pln">a </span><span class="pun">=</span><span class="pln"> androguard</span><span class="pun">.</span><span class="typ">AndroguardS</span><span class="pun">(</span><span class="pln"> </span><span class="str">"path_to_your_file"</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br><br></span><span class="com"># VMAnalysis class takes the virtual machine as first input (e.g : DalvikVMFormat, JVMFormat)</span><span class="pln"><br>x </span><span class="pun">=</span><span class="pln"> analysis</span><span class="pun">.</span><span class="typ">VMAnalysis</span><span class="pun">(</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">get_vm</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span></pre><p>Next,
+ you can iterate over each method to get the corresponding analysed 
+method, to do that you have an access to the get_method method where the
+ parameter is a method object : </p><pre class="prettyprint"><span class="kwd">for</span><span class="pln"> method </span><span class="kwd">in</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">get_methods</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="com">### g is the analyzed method</span><span class="pln"><br>&nbsp; &nbsp;g </span><span class="pun">=</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">(</span><span class="pln"> method </span><span class="pun">)</span><span class="pln"><br><br>&nbsp; &nbsp;</span><span class="com">## print few information</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> method</span><span class="pun">.</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> method</span><span class="pun">.</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> method</span><span class="pun">.</span><span class="pln">get_descriptor</span><span class="pun">(),</span><span class="pln"> method</span><span class="pun">.</span><span class="pln">get_code</span><span class="pun">().</span><span class="pln">get_length</span><span class="pun">(),</span><span class="pln"> method</span><span class="pun">.</span><span class="pln">get_code</span><span class="pun">().</span><span class="pln">registers_size</span><span class="pun">.</span><span class="pln">get_value</span><span class="pun">()</span></pre><p>If you use the androlyze tool, you can used the AnalyzeAPK or AnalyzeDex directly : </p><pre class="prettyprint"><span class="pln">a</span><span class="pun">,</span><span class="pln"> d</span><span class="pun">,</span><span class="pln"> dx </span><span class="pun">=</span><span class="pln"> </span><span class="typ">AnalyzeAPK</span><span class="pun">(</span><span class="str">"test.apk"</span><span class="pun">)</span><span class="pln"> </span><span class="com"># a is an APK object, d is a DalvikVMFormat object , and dx is a VMAnalysis object</span><span class="pln"><br><br>d</span><span class="pun">,</span><span class="pln"> dx </span><span class="pun">=</span><span class="pln"> </span><span class="typ">AnalyzeDex</span><span class="pun">(</span><span class="str">"test.dex"</span><span class="pun">)</span><span class="pln"> </span><span class="com"># d is a DalvikVMFormat object , and dx is a VMAnalysis object</span></pre><h2><a name="CFG"></a>CFG<a href="#CFG" class="section_anchor"></a></h2><p>In
+ the analysed method, you have a field basic_blocks which represents all
+ the basic blocks in the method. You can used the get() method of this 
+object to iterate over all basic blocks : </p><pre class="prettyprint"><span class="kwd">for</span><span class="pln"> method </span><span class="kwd">in</span><span class="pln"> a</span><span class="pun">.</span><span class="pln">get_methods</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;g </span><span class="pun">=</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">(</span><span class="pln"> method </span><span class="pun">)</span><span class="pln"><br><br>&nbsp; &nbsp;idx </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> g</span><span class="pun">.</span><span class="pln">basic_blocks</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\t %s %x %x"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i</span><span class="pun">.</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">start</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">),</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">ins</span><span class="pun">[-</span><span class="lit">1</span><span class="pun">].</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> </span><span class="str">'[ CHILDS = '</span><span class="pun">,</span><span class="pln"> </span><span class="str">', '</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln"> </span><span class="str">"%x-%x-%s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">j</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln"> j</span><span class="pun">[</span><span class="lit">1</span><span class="pun">],</span><span class="pln"> j</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">get_name</span><span class="pun">())</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> j </span><span class="kwd">in</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">childs </span><span class="pun">),</span><span class="pln"> </span><span class="str">']'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'[ FATHERS = '</span><span class="pun">,</span><span class="pln"> </span><span class="str">', '</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln"> j</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">get_name</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> j </span><span class="kwd">in</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">fathers </span><span class="pun">),</span><span class="pln"> </span><span class="str">']'</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">free_blocks_offsets<br><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> ins </span><span class="kwd">in</span><span class="pln"> i</span><span class="pun">.</span><span class="pln">get_ins</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\t\t %x"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> idx</span><span class="pun">,</span><span class="pln"> ins</span><span class="pun">.</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> ins</span><span class="pun">.</span><span class="pln">get_operands</span><span class="pun">()</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;idx </span><span class="pun">+=</span><span class="pln"> ins</span><span class="pun">.</span><span class="pln">get_length</span><span class="pun">()</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> </span><span class="str">""</span></pre><p>The most common attributes in a basic block are : </p><ul><li>name : the name of the basic block (string) </li><li>start : a value which represents the offset where the basic block start (integer) </li><li>end : a value which represents the offset where the basic block finish (integer) </li><li>childs : a list of objects which represent the childs of the basic block </li><li>fathers : a list of objects which represent the fathers of the basic block </li><li>ins (or with get_ins method) : a list of <a href="http://code.google.com/p/androguard/wiki/Instructions" rel="nofollow">Instructions</a> objects of the basic block  </li></ul><h2><a name="Information"></a>Information<a href="#Information" class="section_anchor"></a></h2><h3><a name="Packages"></a>Packages<a href="#Packages" class="section_anchor"></a></h3><p>It's
+ possible to view all used packages in your applications by using the 
+tainted_packages field. With this field you can get packages, and every 
+path where a package is used. With the access_flag() method of a 
+package, you can know if a package is used in a call or during the 
+creation of an object. </p><pre class="prettyprint"><span class="kwd">for</span><span class="pln"> m</span><span class="pun">,</span><span class="pln"> _ </span><span class="kwd">in</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">tainted_packages</span><span class="pun">.</span><span class="pln">get_packages</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"package : "</span><span class="pun">,</span><span class="pln"> repr</span><span class="pun">(</span><span class="pln">m</span><span class="pun">.</span><span class="pln">get_info</span><span class="pun">())</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">for</span><span class="pln"> path </span><span class="kwd">in</span><span class="pln"> m</span><span class="pun">.</span><span class="pln">get_paths</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\t\t =&gt;"</span><span class="pun">,</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_access_flag</span><span class="pun">(),</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_descriptor</span><span class="pun">(),</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_bb</span><span class="pun">().</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> </span><span class="str">"%x"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">path</span><span class="pun">.</span><span class="pln">get_bb</span><span class="pun">().</span><span class="pln">start </span><span class="pun">+</span><span class="pln"> path</span><span class="pun">.</span><span class="pln">get_idx</span><span class="pun">()</span><span class="pln"> </span><span class="pun">)</span></pre><p>It's possible to get all internal calls of the application : </p><pre class="prettyprint"><span class="kwd">for</span><span class="pln"> j </span><span class="kwd">in</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">tainted_packages</span><span class="pun">.</span><span class="pln">get_internal_packages</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\t %s %s %s %x ---&gt; %s %s %s"</span><span class="pln"> &nbsp;</span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_descriptor</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_bb</span><span class="pun">().</span><span class="pln">start </span><span class="pun">+</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_idx</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_descriptor</span><span class="pun">())</span></pre><p>or all external calls of the application : </p><pre class="prettyprint"><span class="kwd">for</span><span class="pln"> j </span><span class="kwd">in</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">tainted_packages</span><span class="pun">.</span><span class="pln">get_external_packages</span><span class="pun">()</span><span class="pln"> </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"\t %s %s %s %x ---&gt; %s %s %s"</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="pun">(</span><span class="pln">j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_method</span><span class="pun">().</span><span class="pln">get_descriptor</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_bb</span><span class="pun">().</span><span class="pln">start </span><span class="pun">+</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_idx</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_class_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_name</span><span class="pun">(),</span><span class="pln"> j</span><span class="pun">.</span><span class="pln">get_descriptor</span><span class="pun">())</span></pre><p>You can search for a specific packages by using regular expressions : </p><pre class="prettyprint"><span class="pln">paths </span><span class="pun">=</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">tainted_packages</span><span class="pun">.</span><span class="pln">search_packages</span><span class="pun">(</span><span class="pln"> </span><span class="str">"Landroid/telephony/"</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>analysis</span><span class="pun">.</span><span class="pln">show_PathP</span><span class="pun">(</span><span class="pln"> paths </span><span class="pun">)</span></pre><p>or search specific methods : </p><pre class="prettyprint"><span class="pln">paths </span><span class="pun">=</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">tainted_packages</span><span class="pun">.</span><span class="pln">search_methods</span><span class="pun">(</span><span class="pln"> </span><span class="str">"Ljavax/crypto/"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"generateSecret"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"."</span><span class="pun">)</span><span class="pln"><br>analysis</span><span class="pun">.</span><span class="pln">show_PathP</span><span class="pun">(</span><span class="pln"> paths </span><span class="pun">)</span></pre><h3><a name="Fields"></a>Fields<a href="#Fields" class="section_anchor"></a></h3><p>Strings, variables </p><h2><a name="Permissions"></a>Permissions<a href="#Permissions" class="section_anchor"></a></h2><p>It's easy to get where a permission is used in an application : </p><pre class="prettyprint"><span class="pln">perms_access </span><span class="pun">=</span><span class="pln"> x</span><span class="pun">.</span><span class="pln">get_permissions</span><span class="pun">(</span><span class="pln"> </span><span class="pun">[]</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br></span><span class="kwd">for</span><span class="pln"> perm </span><span class="kwd">in</span><span class="pln"> perms_access </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp;</span><span class="kwd">print</span><span class="pln"> </span><span class="str">"PERM : "</span><span class="pun">,</span><span class="pln"> perm<br>&nbsp; &nbsp;analysis</span><span class="pun">.</span><span class="pln">show_PathP</span><span class="pun">(</span><span class="pln"> perms_access</span><span class="pun">[</span><span class="pln"> perm </span><span class="pun">]</span><span class="pln"> </span><span class="pun">)</span></pre><p>or with : </p><pre class="prettyprint"><span class="pln">show_Permissions</span><span class="pun">(</span><span class="pln"> x </span><span class="pun">)</span></pre><p>For example, with androlyze you can extract permissions : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androlyze</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i apks</span><span class="pun">/</span><span class="pln">malwares</span><span class="pun">/</span><span class="pln">honeynet</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">fc9</span><span class="pun">.</span><span class="pln">currencyguide</span><span class="pun">-</span><span class="lit">1.apk</span><span class="pln"> </span><span class="pun">-</span><span class="pln">x<br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;ACCESS_WIFI_STATE<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="typ">Internet_Conn</span><span class="pun">;</span><span class="pln"> </span><span class="typ">IsWIFIAvailabe</span><span class="pln"> </span><span class="pun">()</span><span class="pln">Z </span><span class="pun">(</span><span class="lit">@IsWIFIAvailabe</span><span class="pun">-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0x4</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">wifi</span><span class="pun">/</span><span class="typ">WifiManager</span><span class="pun">;</span><span class="pln"> isWifiEnabled </span><span class="pun">()</span><span class="pln">Z<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="typ">Internet_Conn</span><span class="pun">;</span><span class="pln"> </span><span class="typ">IsWIFIAvailabe</span><span class="pln"> </span><span class="pun">()</span><span class="pln">Z </span><span class="pun">(</span><span class="lit">@IsWIFIAvailabe</span><span class="pun">-</span><span class="pln">BB@0x10</span><span class="pun">-</span><span class="lit">0x14</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">wifi</span><span class="pun">/</span><span class="typ">WifiManager</span><span class="pun">;</span><span class="pln"> getWifiState </span><span class="pun">()</span><span class="pln">I<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="typ">Internet_Conn</span><span class="pun">;</span><span class="pln"> </span><span class="typ">IsWIFIAvailabe</span><span class="pln"> </span><span class="pun">()</span><span class="pln">Z </span><span class="pun">(</span><span class="lit">@IsWIFIAvailabe</span><span class="pun">-</span><span class="pln">BB@0x22</span><span class="pun">-</span><span class="lit">0x26</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">wifi</span><span class="pun">/</span><span class="typ">WifiManager</span><span class="pun">;</span><span class="pln"> getConnectionInfo </span><span class="pun">()</span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">wifi</span><span class="pun">/</span><span class="typ">WifiInfo</span><span class="pun">;</span><span class="pln"><br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;INTERNET<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="typ">Internet_Conn</span><span class="pun">;</span><span class="pln"> </span><span class="typ">TestConnection</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;)</span><span class="pln">Z </span><span class="pun">(</span><span class="lit">@TestConnection</span><span class="pun">-</span><span class="pln">BB@0x28</span><span class="pun">-</span><span class="lit">0x28</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">URL</span><span class="pun">;</span><span class="pln"> openStream </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">io</span><span class="pun">/</span><span class="typ">InputStream</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="typ">Rate_Parser</span><span class="pun">;</span><span class="pln"> </span><span class="typ">StartParser</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;)</span><span class="pln">Z </span><span class="pun">(</span><span class="lit">@StartParser</span><span class="pun">-</span><span class="pln">BB@0x14</span><span class="pun">-</span><span class="lit">0x1e</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="pln">URL</span><span class="pun">;</span><span class="pln"> openStream </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">io</span><span class="pun">/</span><span class="typ">InputStream</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">f</span><span class="pun">/</span><span class="pln">a</span><span class="pun">;</span><span class="pln"> </span><span class="str">&lt;init&gt;</span><span class="pln"> </span><span class="pun">()</span><span class="pln">V </span><span class="pun">(@&lt;</span><span class="pln">init</span><span class="pun">&gt;-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0xc</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Lorg</span><span class="pun">/</span><span class="pln">apache</span><span class="pun">/</span><span class="pln">http</span><span class="pun">/</span><span class="pln">impl</span><span class="pun">/</span><span class="pln">client</span><span class="pun">/</span><span class="typ">DefaultHttpClient</span><span class="pun">;</span><span class="pln"> </span><span class="str">&lt;init&gt;</span><span class="pln"> </span><span class="pun">()</span><span class="pln">V<br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;READ_CONTACTS<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">c</span><span class="pun">/</span><span class="pln">i</span><span class="pun">;</span><span class="pln"> b </span><span class="pun">()</span><span class="pln">V </span><span class="pun">(</span><span class="lit">@b</span><span class="pun">-</span><span class="pln">BB@0xd4</span><span class="pun">-</span><span class="lit">0xd4</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">provider</span><span class="pun">/</span><span class="typ">ContactsContract$CommonDataKinds$Phone</span><span class="pun">;</span><span class="pln"> CONTENT_URI </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">net</span><span class="pun">/</span><span class="typ">Uri</span><span class="pun">;</span><span class="pln"><br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;READ_PHONE_STATE<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">b</span><span class="pun">;</span><span class="pln"> </span><span class="str">&lt;init&gt;</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">content</span><span class="pun">/</span><span class="typ">Context</span><span class="pun">;)</span><span class="pln">V </span><span class="pun">(@&lt;</span><span class="pln">init</span><span class="pun">&gt;-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0x26</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">telephony</span><span class="pun">/</span><span class="typ">TelephonyManager</span><span class="pun">;</span><span class="pln"> getDeviceId </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">b</span><span class="pun">;</span><span class="pln"> </span><span class="str">&lt;init&gt;</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">content</span><span class="pun">/</span><span class="typ">Context</span><span class="pun">;)</span><span class="pln">V </span><span class="pun">(@&lt;</span><span class="pln">init</span><span class="pun">&gt;-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0x32</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">telephony</span><span class="pun">/</span><span class="typ">TelephonyManager</span><span class="pun">;</span><span class="pln"> getSubscriberId </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"><br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;SEND_SMS<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">c</span><span class="pun">/</span><span class="pln">j</span><span class="pun">;</span><span class="pln"> b </span><span class="pun">()</span><span class="pln">V </span><span class="pun">(</span><span class="lit">@b</span><span class="pun">-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0x2</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">telephony</span><span class="pun">/</span><span class="typ">SmsManager</span><span class="pun">;</span><span class="pln"> getDefault </span><span class="pun">()</span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">telephony</span><span class="pun">/</span><span class="typ">SmsManager</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">c</span><span class="pun">/</span><span class="pln">j</span><span class="pun">;</span><span class="pln"> b </span><span class="pun">()</span><span class="pln">V </span><span class="pun">(</span><span class="lit">@b</span><span class="pun">-</span><span class="pln">BB@0x0</span><span class="pun">-</span><span class="lit">0x16</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">telephony</span><span class="pun">/</span><span class="typ">SmsManager</span><span class="pun">;</span><span class="pln"> sendTextMessage </span><span class="pun">(</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">app</span><span class="pun">/</span><span class="typ">PendingIntent</span><span class="pun">;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">app</span><span class="pun">/</span><span class="typ">PendingIntent</span><span class="pun">;)</span><span class="pln">V<br>PERM </span><span class="pun">:</span><span class="pln"> &nbsp;VIBRATE<br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="typ">Lcom</span><span class="pun">/</span><span class="pln">fc9</span><span class="pun">/</span><span class="pln">currencyguide</span><span class="pun">/</span><span class="pln">daemon</span><span class="pun">/</span><span class="pln">c</span><span class="pun">/</span><span class="pln">g</span><span class="pun">;</span><span class="pln"> b </span><span class="pun">()</span><span class="pln">V </span><span class="pun">(</span><span class="lit">@b</span><span class="pun">-</span><span class="pln">BB@0x18</span><span class="pun">-</span><span class="lit">0x38</span><span class="pun">)</span><span class="pln"> &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> </span><span class="typ">Landroid</span><span class="pun">/</span><span class="pln">os</span><span class="pun">/</span><span class="typ">Vibrator</span><span class="pun">;</span><span class="pln"> vibrate </span><span class="pun">(</span><span class="pln">J</span><span class="pun">)</span><span class="pln">V</span></pre><h2><a name="Signatures"></a>Signatures<a href="#Signatures" class="section_anchor"></a></h2><h2><a name="Risk_Indicator"></a>Risk Indicator<a href="#Risk_Indicator" class="section_anchor"></a></h2>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">►</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis">Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input name="sequence_num" value="" type="hidden">
+ <input name="create_time" value="" type="hidden">
+ <input name="mode" value="" type="hidden">
+ <input name="pagename" value="Analysis" type="hidden">
+ <input name="token" value="" type="hidden">
+ </form>
+
+
+
+ <script src="Analysis_files/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="Analysis_files/dit_scripts.js"></script>
+
+
+<script type="text/javascript" src="Analysis_files/plusone.js">
+</script>
+
+  
+ 
+ 
+ <script type="text/javascript" src="Analysis_files/ph_core.js"></script>
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="Analysis_files/codesite_product_dictionary_ph.js"></script>
+</div> 
+<div id="footer" dir="ltr">
+ <div class="text">
+ ©2011 Google -
+ <a href="http://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="http://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+ 
+ 
+
+
+ 
+ <div style="display: none;" id="menuDiv-projects-dropdown" class="menuDiv instance0"><div class="menuCategory controls"><a href="http://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis&amp;amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FAnalysis" style="display: block;" class="menuItem">Sign in to see your favorites</a><hr class="menuSeparator"><a href="http://code.google.com/more/" style="display: block;" class="menuItem">Find developer products...</a><a href="http://code.google.com/hosting/" style="display: block;" class="menuItem">Find open source projects...</a></div></div></body></html>

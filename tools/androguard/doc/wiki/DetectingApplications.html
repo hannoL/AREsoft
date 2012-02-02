@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+ <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/androguard/wiki/DetectingApplications">
+ 
+ <script src="DetectingApplications_files/googleapis.js"></script><script type="text/javascript">
+ 
+ (function(){function a(b){this.t={};this.tick=function(b,d,e){d=e!=void 0?e:(new Date).getTime();this.t[b]=d};this.tick("start",null,b)}var c=new a;window.jstiming={Timer:a,load:c};try{var f=null;window.chrome&&window.chrome.csi&&(f=Math.floor(window.chrome.csi().pageT));f==null&&window.gtbExternal&&(f=window.gtbExternal.pageT());f==null&&window.external&&(f=window.external.pageT);f&&(window.jstiming.pt=f)}catch(g){};})();
+
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"profileUrl":null,"token":null,"assetHostPath":"http://www.gstatic.com/codesite/ph","domainName":null,"assetVersionPath":"http://www.gstatic.com/codesite/ph/17856622392391512803","projectHomeUrl":"/p/androguard","relativeBaseUrl":"","projectName":"androguard","loggedInUserEmail":null};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ _gaq.push(
+ ['projectTracker._setAccount', 'UA-22757360-2'],
+ ['projectTracker._trackPageview']);
+ 
+ 
+ </script>
+ 
+ 
+ <title>DetectingApplications - 
+ androguard -
+ 
+ 
+ Reverse engineering, Malware and goodware analysis of Android applications ... and more ! - Google Project Hosting
+ </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link type="text/css" rel="stylesheet" href="DetectingApplications_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="DetectingApplications_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="http://code.google.com/feeds/p/androguard/hgchanges/basic?repo=wiki&amp;path=/DetectingApplications.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17856622392391512803/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+<script src="DetectingApplications_files/ga.js" async="" type="text/javascript"></script></head><body class="t6">
+<script type="text/javascript">
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px;"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+
+ <table style="padding: 0px; margin: 0px 0px 10px; width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 58px;">
+ 
+ <td id="plogo">
+ <link itemprop="url" href="http://code.google.com/p/androguard">
+ <a href="http://code.google.com/p/androguard/">
+ 
+ 
+ <img src="DetectingApplications_files/logo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em;">
+ 
+ <div id="pname">
+ <a href="http://code.google.com/p/androguard/"><span itemprop="name">androguard</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="http://code.google.com/p/androguard/"><span itemprop="description">Reverse engineering, Malware and goodware analysis of Android applications ... and more !</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space: nowrap; text-align: right; vertical-align: bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" type="text">
+ 
+ <input name="projectsearch" value="Search projects" type="submit">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="http://code.google.com/p/androguard/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+<table class="st" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/androguard/w/list" method="GET" style="display: inline;">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1">&nbsp;All wiki pages</option>
+ <option value="3">&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4">&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input size="38" id="searchq" name="q" autocomplete="off" type="text"></span>
+ 
+ 
+ 
+ <input value="Search" type="submit">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="bevel-right" valign="top" align="right"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol">
+
+ 
+<!-- IE -->
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align: top; padding-left: 5px;">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size: 120%; font-weight: bold;">DetectingApplications</span>
+ &nbsp;
+ <div> 
+ 
+ 
+ <br>
+ 
+ <a class="label" style="padding-top: 2px;" href="http://code.google.com/p/androguard/w/list?q=label:Featured" title="Listed on project home page">Featured</a>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float: right;">
+ Updated <span title="Fri Sep  9 01:03:52 2011">
+ Sep 9, 2011</span>
+ 
+ by <a style="white-space: nowrap;" href="http://code.google.com/u/115278253733459388131/">anthony....@gmail.com</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <p></p><ul><li><a href="#Androguard">Androguard</a></li><ul><li><a href="#Androsign:_check_if_an_application_is_in_the_database">Androsign: check if an application is in the database</a></li><li><a href="#Androcsign:_add/remove/list_signatures">Androcsign: add/remove/list signatures</a></li></ul></ul> <h1><a name="Androguard"></a>Androguard<a href="#Androguard" class="section_anchor"></a></h1><p>The engine in androguard is able to detect applications by using <a href="http://code.google.com/p/androguard/wiki/Similarity" rel="nofollow">similarity distance</a>,
+ and more precisely the Normalized Compression Distance. For now, our 
+algorithm is able to detect method or class inside another application 
+by using similarity distance and entropies. This algorithm is based on 
+the following <a href="https://docs.google.com/viewer?a=v&amp;pid=explorer&amp;chrome=true&amp;srcid=0B5j6gkONHJd7MmE4MDhkMTUtMzI2YS00Zjg5LWFmNjItZDFmNTM0NTYzNGZl&amp;hl=en" rel="nofollow">ideas</a>.
+ But the algorithm uses clustering on methods/classes with different 
+sources of information (entropies). After that I apply similarity 
+distance algorithm to find the corresponding signature. </p><p>The general algorithm can be briefly describes : </p><ul><li>clustering with entropies, </li><li>similarity distance on each required cluster with a general <a href="http://code.google.com/p/androguard/wiki/Signature#Similarity_distance_with_clustering" rel="nofollow">signature</a>. </li></ul><hr><p>For
+ now, Androsign and Androcsign can be used on linux 32 bits (share 
+libraries are embedded in the mercurial repository). But you must have 
+the following libraries on your system : </p><ul><li><a href="http://bzip.org/" rel="nofollow">bzip2</a> </li><li><a href="http://zlib.net/" rel="nofollow">zlib</a> </li><li><a href="http://tukaani.org/xz/" rel="nofollow">xz</a> </li><li><a href="http://code.google.com/p/snappy/" rel="nofollow">snappy</a> </li><li><a href="http://code.google.com/p/google-sparsehash/" rel="nofollow">sparsehash</a> </li><li><a href="http://www.python.org/" rel="nofollow">python-dev</a> </li></ul><p>You can compile librairies direcly with the Makefile in the root directory : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ make</span></pre><hr><p>Database of android malwares : <a href="http://code.google.com/p/androguard/source/browse/signatures/dbandroguard" rel="nofollow">http://code.google.com/p/androguard/source/browse/signatures/dbandroguard</a> </p><p>Engine Configuration : <a href="http://code.google.com/p/androguard/source/browse/signatures/dbconfig" rel="nofollow">http://code.google.com/p/androguard/source/browse/signatures/dbconfig</a> </p><h2><a name="Androsign:_check_if_an_application_is_in_the_database"></a>Androsign: check if an application is in the database<a href="#Androsign:_check_if_an_application_is_in_the_database" class="section_anchor"></a></h2><p>This tool can verify if a signature in the database matches with the input android application (DEX/APK). </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">h<br></span><span class="typ">Usage</span><span class="pun">:</span><span class="pln"> androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">[</span><span class="pln">options</span><span class="pun">]</span><span class="pln"><br><br></span><span class="typ">Options</span><span class="pun">:</span><span class="pln"><br>&nbsp; </span><span class="pun">-</span><span class="pln">h</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">help &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;show </span><span class="kwd">this</span><span class="pln"> help message </span><span class="kwd">and</span><span class="pln"> </span><span class="kwd">exit</span><span class="pln"><br>&nbsp; </span><span class="pun">-</span><span class="pln">i INPUT</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">input</span><span class="pun">=</span><span class="pln">INPUT<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">use</span><span class="pln"> </span><span class="kwd">this</span><span class="pln"> filename<br>&nbsp; </span><span class="pun">-</span><span class="pln">d DIRECTORY</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">directory</span><span class="pun">=</span><span class="pln">DIRECTORY<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; directory </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">use</span><span class="pln"> </span><span class="kwd">this</span><span class="pln"> directory<br>&nbsp; </span><span class="pun">-</span><span class="pln">b DATABASE</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">database</span><span class="pun">=</span><span class="pln">DATABASE<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; database </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">use</span><span class="pln"> </span><span class="kwd">this</span><span class="pln"> database<br>&nbsp; </span><span class="pun">-</span><span class="pln">c CONFIG</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">config</span><span class="pun">=</span><span class="pln">CONFIG<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">use</span><span class="pln"> </span><span class="kwd">this</span><span class="pln"> configuration<br>&nbsp; </span><span class="pun">-</span><span class="pln">v</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">verbose &nbsp; &nbsp; &nbsp; &nbsp; display debug information</span></pre><p>To test if an application is in the database : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i apks</span><span class="pun">/</span><span class="pln">malwares</span><span class="pun">/</span><span class="typ">DroidDream</span><span class="pun">/</span><span class="typ">Magic</span><span class="pun">\</span><span class="pln"> </span><span class="typ">Hypnotic</span><span class="pun">\</span><span class="pln"> </span><span class="typ">Spiral</span><span class="pun">.</span><span class="pln">apk </span><span class="pun">-</span><span class="pln">b signatures</span><span class="pun">/</span><span class="pln">dbandroguard </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig <br></span><span class="typ">Magic</span><span class="pln"> </span><span class="typ">Hypnotic</span><span class="pln"> </span><span class="typ">Spiral</span><span class="pun">.</span><span class="pln">apk </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDream</span><span class="pln"><br><br>desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i apks</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">983.apk</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b signatures</span><span class="pun">/</span><span class="pln">dbandroguard </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig <br>com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">983.apk</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span></pre><p>or to test an entire directory : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">d apks</span><span class="pun">/</span><span class="pln">mixe</span><span class="pun">/</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b signatures</span><span class="pun">/</span><span class="pln">dbandroguard </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig<br></span><span class="lit">594ebcc14a163b86222bd09adfe95498da81ceaeb772b706339d0a24858b1267</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">GoldDream</span><span class="pln"><br>d615dd181124ca0fde3d4785786586c3593a61d2c25c567ff93b230eb6d3a97a </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDreamLight</span><span class="pln"><br>c6eb43f2b7071bbfe893fc78419286c3cb7c83ce56517bd281db5e7478caf995 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">Wat</span><span class="pln"><br>com</span><span class="pun">.</span><span class="pln">rovio</span><span class="pun">.</span><span class="pln">angrybirdsseasons</span><span class="pun">-</span><span class="lit">1.apk</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>c1a94e9fd0a6bda7e5ead89d8ef9ee064aeccdaf65238bf604f33e987a8656b9 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DogoWar</span><span class="pln"><br>add10b0368753ec38de0dca15550d824ac141f0c86f2f123f30551bd82e82415 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDream</span><span class="pun">-</span><span class="typ">Included</span><span class="pln"><br></span><span class="lit">137274dccff625eb1f9d647b09ed50cdfa8f86fe1a893d951f1f04e0d91f85bc</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDream</span><span class="pln"><br></span><span class="lit">03fbe528af4e8d17aef4b8db67f96f2905a7f52e0342826aeb3ec21b16dfc283</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidKungfu2</span><span class="pln"><br></span><span class="lit">76e91e1f9cc3422c333e51b65bb98dd50d00f1f45a15d2008807b06c125e651a</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">NickySpy</span><span class="pln"><br>c687e2f0b4992bd368df0c24b76943c99ac3eb9e4e8c13422ebf1a872a06070a </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">Geinimi</span><span class="pln"><br>zimperlich</span><span class="pun">.</span><span class="pln">apk </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>cf9ebba0501079d61cff24d00e2de662c591039d8ff7f0c982e2e2778d6cf49b </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">NickySpy</span><span class="pln"><br></span><span class="lit">7513c6a11b88b87f528b88624d1b198b5bcc325864b328e32cc0d790b0bfc1c4</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidKungfu</span></pre><p>You can specify the verbose option to have more information : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">d apks</span><span class="pun">/</span><span class="pln">mixe</span><span class="pun">/</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b signatures</span><span class="pun">/</span><span class="pln">dbandroguard </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig </span><span class="pun">-</span><span class="pln">v<br></span><span class="typ">DroidKungfu</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.8512959480285645</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6483860015869141</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6914162635803223</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7337584495544434</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.2597851753234863</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">NickySpy</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.9857087135314941</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7834396362304688</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.8159637451171875</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5245232582092285</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.9697809219360352</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7652387619018555</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.8861689567565918</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5666427612304688</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.2081961631774902</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">DroidDreamLight</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.7545814514160156</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6544718742370605</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.8625667095184326</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5037317276000977</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">DroidKungfu2</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.3921775817871094</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.0211343765258789</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5443987846374512</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.1571140289306641</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9754178524017334</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.5738983154296875</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.3132176399230957</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6949276924133301</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4872374534606934</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.0113649368286133</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">Geinimi</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="kwd">or</span><span class="pln"> </span><span class="pun">(</span><span class="lit">2</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">3</span><span class="pun">))</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">6</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.8281669616699219</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5770049095153809</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4555692672729492</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6577677726745605</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9754178524017334</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.973602294921875</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7980365753173828</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5259051322937012</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5926632881164551</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.1278433799743652</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">8</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3.2040255069732666</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.4406454563140869</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5679025650024414</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5526924133300781</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9754178524017334</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">9</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.6186771392822266</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4623689651489258</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.6163301467895508</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5717849731445312</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">DogoWar</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> CLASSSIM L</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">10</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.5144822597503662</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.3906300067901611</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2.7473165988922119</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9876822233200073</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> CLASSSIM L</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">11</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.1654442787170414</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.6046688079833986</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.4984882354736329</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9250543117523193</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">Wat</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> CLASSSIM L</span><span class="pun">:</span><span class="lit">6</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3.8983065400804793</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2.8835478850773404</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2.3970618758882796</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.0557840211050848</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.6026742117745536</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">GoldDream</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pln"> </span><span class="kwd">and</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">13</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.9010534286499023</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7493586540222168</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5943202972412109</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.6015524864196777</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">14</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> </span><span class="pun">[</span><span class="lit">2.3710076808929443</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.3113172054290771</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.8033995628356934</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.538449764251709</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.9754178524017334</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">DroidDream</span><span class="pun">-</span><span class="typ">Included</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">8</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">15</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.9024319648742676</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7362179756164551</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.5589680671691895</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.422579288482666</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br></span><span class="typ">DroidDream</span><span class="pln"> </span><span class="pun">(</span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">---&gt;</span><span class="pln"> METHSIM L</span><span class="pun">:</span><span class="lit">9</span><span class="pln"> I</span><span class="pun">:</span><span class="lit">16</span><span class="pln"> N</span><span class="pun">:</span><span class="lit">0</span><span class="pln"> J</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4.7122836112976074</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4915299415588379</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.9674844741821289</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.9468302726745605</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]</span><span class="pln"><br><br></span><span class="lit">594ebcc14a163b86222bd09adfe95498da81ceaeb772b706339d0a24858b1267</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">10</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">87</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">96</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">11</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">GoldDream</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">13</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.13768115639686584</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">14</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.022988505661487579</span><span class="pun">]]</span><span class="pln"><br>d615dd181124ca0fde3d4785786586c3593a61d2c25c567ff93b230eb6d3a97a </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">30</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">410</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">890</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">13</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">41</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">171</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDreamLight</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.1629464328289032</span><span class="pun">]]</span><span class="pln"><br>c6eb43f2b7071bbfe893fc78419286c3cb7c83ce56517bd281db5e7478caf995 </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">49</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">37</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">14</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">Wat</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">12</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.11543287336826324</span><span class="pun">]]</span><span class="pln"><br>com</span><span class="pun">.</span><span class="pln">rovio</span><span class="pun">.</span><span class="pln">angrybirdsseasons</span><span class="pun">-</span><span class="lit">1.apk</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">30</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">785</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">912</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">26</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">153</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"> </span><span class="pun">[]</span><span class="pln"><br>c1a94e9fd0a6bda7e5ead89d8ef9ee064aeccdaf65238bf604f33e987a8656b9 </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">43</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">635</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">1897</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">18</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">48</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">324</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DogoWar</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">11</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.16629712283611298</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.087628863751888275</span><span class="pun">]]</span><span class="pln"><br>add10b0368753ec38de0dca15550d824ac141f0c86f2f123f30551bd82e82415 </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">10</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">15</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">89</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">18</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDream</span><span class="pun">-</span><span class="typ">Included</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">15</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.1735537201166153</span><span class="pun">]]</span><span class="pln"><br></span><span class="lit">137274dccff625eb1f9d647b09ed50cdfa8f86fe1a893d951f1f04e0d91f85bc</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">10</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">106</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">12</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidDream</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">16</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.084444440901279449</span><span class="pun">]]</span><span class="pln"><br></span><span class="lit">03fbe528af4e8d17aef4b8db67f96f2905a7f52e0342826aeb3ec21b16dfc283</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">19</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">6</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">63</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">359</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">8</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">30</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">69</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidKungfu2</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.064864866435527802</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.060606062412261963</span><span class="pun">]]</span><span class="pln"><br></span><span class="lit">76e91e1f9cc3422c333e51b65bb98dd50d00f1f45a15d2008807b06c125e651a</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">14</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">103</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">198</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">6</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">2</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">18</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">37</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">NickySpy</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.12845528125762939</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.15647481381893158</span><span class="pun">]]</span><span class="pln"><br>c687e2f0b4992bd368df0c24b76943c99ac3eb9e4e8c13422ebf1a872a06070a </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">24</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">615</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">573</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">11</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">39</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">118</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">Geinimi</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">9</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.2215568870306015</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">7</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.22564935684204102</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.068249255418777466</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">8</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.02247191034257412</span><span class="pun">]]</span><span class="pln"><br>zimperlich</span><span class="pun">.</span><span class="pln">apk </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">26</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">19</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">1</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">6</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">9</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"> </span><span class="pun">[]</span><span class="pln"><br>cf9ebba0501079d61cff24d00e2de662c591039d8ff7f0c982e2e2778d6cf49b </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">16</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">4</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">67</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">248</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">7</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">15</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">58</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">NickySpy</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.12845528125762939</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.15647481381893158</span><span class="pun">]]</span><span class="pln"><br></span><span class="lit">7513c6a11b88b87f528b88624d1b198b5bcc325864b328e32cc0d790b0bfc1c4</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> loading apk</span><span class="pun">..</span><span class="pln"> loading dex</span><span class="pun">..</span><span class="pln"> check </span><span class="pun">...</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">35</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">5</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">297</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">1261</span><span class="pln"> C</span><span class="pun">:</span><span class="lit">14</span><span class="pln"> CC</span><span class="pun">:</span><span class="lit">3</span><span class="pln"> CMP</span><span class="pun">:</span><span class="lit">50</span><span class="pln"> EL</span><span class="pun">:</span><span class="lit">219</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="typ">DroidKungfu</span><span class="pln"> </span><span class="pun">[[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.10884353518486023</span><span class="pun">]]</span></pre><h2><a name="Androcsign:_add/remove/list_signatures"></a>Androcsign: add/remove/list signatures<a href="#Androcsign:_add/remove/list_signatures" class="section_anchor"></a></h2><p>This
+ tool helps you to create your own signatures in order to add them in 
+the database. In fact, it's more easy after an analysis to isolate which
+ parts are the more interesting to add in the database in order to 
+detect the malware (and variants). So, the idea is to describe your 
+signature of a malware in a json format file to add this signature to 
+the database. </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androcsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">h<br></span><span class="typ">Usage</span><span class="pun">:</span><span class="pln"> androcsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">[</span><span class="pln">options</span><span class="pun">]</span><span class="pln"><br><br></span><span class="typ">Options</span><span class="pun">:</span><span class="pln"><br>&nbsp; </span><span class="pun">-</span><span class="pln">h</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">help &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;show </span><span class="kwd">this</span><span class="pln"> help message </span><span class="kwd">and</span><span class="pln"> </span><span class="kwd">exit</span><span class="pln"><br>&nbsp; </span><span class="pun">-</span><span class="pln">i INPUT</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">input</span><span class="pun">=</span><span class="pln">INPUT<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; file </span><span class="pun">:</span><span class="pln"> </span><span class="kwd">use</span><span class="pln"> </span><span class="kwd">this</span><span class="pln"> filename<br>&nbsp; </span><span class="pun">-</span><span class="pln">o OUTPUT</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">output</span><span class="pun">=</span><span class="pln">OUTPUT<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; output database<br>&nbsp; </span><span class="pun">-</span><span class="pln">l LIST</span><span class="pun">,</span><span class="pln"> </span><span class="pun">--</span><span class="pln">list</span><span class="pun">=</span><span class="pln">LIST &nbsp;list malwares </span><span class="kwd">in</span><span class="pln"> database</span></pre><p>The input file is a classical json format : </p><pre class="prettyprint"><span class="pun">[</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"SAMPLE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"apks/malwares/DroidDream/Magic Hypnotic Spiral.apk"</span><span class="pln"> </span><span class="pun">},</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"BASE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"AndroidOS"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"NAME"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"DroidDream"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"SIGNATURE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"TYPE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"METHSIM"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"CN"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"Lcom/android/root/Setting;"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"MN"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"postUrl"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"D"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"(Ljava/lang/String; Landroid/content/Context;)V"</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="str">"BF"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"0"</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="pun">]</span></pre><p>where
+ SAMPLE is the file where signatures will be extracted. NAME is the name
+ of your signature. And SIGNATURE is a list of dictionnary which 
+describes all sub-signatures. </p><p>A sub-signature can be a : </p><ul><li>METHSIM : CN is the classname, NM is the method name, and D is the descriptor </li><li>CLASSSIM : CN is the classname </li></ul><p>So a sub-signature can be apply on a specific method or directly on an entire class. </p><p>BF is the boolean formula of the whole signature, so it's possible to mix different sub-signatures. </p><p>When the sub-signature is added to the database, the engine will keep only interesting information : </p><ul><li>entropies of general <a href="http://code.google.com/p/androguard/wiki/Signature#Similarity_distance_with_clustering" rel="nofollow">signature</a>,
+ android packages, java packages, binary raw, and exceptions. These 
+entropies are using to clustering sub-signatures and compare items : it 
+is these values that which will be used to apply clustering, </li><li>value
+ of the general signature : it is this value that which will be used to 
+apply similarity distance on each required cluster.  </li></ul><p>In the
+ previous output, we isolated one method (postUrl) in an application 
+(droiddream malware) to create a new signature. Androcsign will extract 
+useful information of this application to add the signature in the 
+database :  </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androcsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i signatures</span><span class="pun">/</span><span class="pln">droiddream</span><span class="pun">.</span><span class="pln">sign </span><span class="pun">-</span><span class="pln">o signatures</span><span class="pun">/</span><span class="pln">dbandroguard<br></span><span class="pun">[{</span><span class="pln">u</span><span class="str">'DroidDream'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[[[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'QltTUDBQMVNTUDJQMlAwRjBQMVAxU1AxRjBQMVAxUDFQMVAxUDJQMFAxUDFQMVAxU1AxUDFQMFAxXUJbUDFJUDFdQltQMVAxUDBQMVAwUDFQMV1CW1AxSVAxXUJbUDFQMUlTXUJbU1Axe0xhbmRyb2lkL2NvbnRlbnQvQ29udGV4dDtnZXRTaGFyZWRQcmVmZXJlbmNlcyhMamF2YS9sYW5nL1N0cmluZzsgSSlMYW5kcm9pZC9jb250ZW50L1NoYXJlZFByZWZlcmVuY2VzO31QMXtMYW5kcm9pZC9jb250ZW50L1NoYXJlZFByZWZlcmVuY2VzO2VkaXQoKUxhbmRyb2lkL2NvbnRlbnQvU2hhcmVkUHJlZmVyZW5jZXMkRWRpdG9yO31TUDF7TGFuZHJvaWQvY29udGVudC9TaGFyZWRQcmVmZXJlbmNlcyRFZGl0b3I7cHV0SW50KExqYXZhL2xhbmcvU3RyaW5nOyBJKUxhbmRyb2lkL2NvbnRlbnQvU2hhcmVkUHJlZmVyZW5jZXMkRWRpdG9yO31QMXtMYW5kcm9pZC9jb250ZW50L1NoYXJlZFByZWZlcmVuY2VzJEVkaXRvcjtjb21taXQoKVp9XUJbUl1CW1AxUDFHXUJbUDFHXQ=='</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.7122836112976074</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4915299415588379</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.9674844741821289</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.9468302726745605</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]],</span><span class="pln"> u</span><span class="str">'0'</span><span class="pun">]}]</span></pre>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">►</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications">Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input name="sequence_num" value="" type="hidden">
+ <input name="create_time" value="" type="hidden">
+ <input name="mode" value="" type="hidden">
+ <input name="pagename" value="DetectingApplications" type="hidden">
+ <input name="token" value="" type="hidden">
+ </form>
+
+
+
+ <script src="DetectingApplications_files/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="DetectingApplications_files/dit_scripts.js"></script>
+
+
+<script type="text/javascript" src="DetectingApplications_files/plusone.js">
+</script>
+
+  
+ 
+ 
+ <script type="text/javascript" src="DetectingApplications_files/ph_core.js"></script>
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="DetectingApplications_files/codesite_product_dictionary_ph.js"></script>
+</div> 
+<div id="footer" dir="ltr">
+ <div class="text">
+ ©2011 Google -
+ <a href="http://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="http://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+ 
+ 
+
+
+ 
+ 
+ <script type="text/javascript">_CS_reportToCsi();</script>
+ 
+ <div style="display: none;" id="menuDiv-projects-dropdown" class="menuDiv instance0"><div class="menuCategory controls"><a href="http://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications&amp;amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FDetectingApplications" style="display: block;" class="menuItem">Sign in to see your favorites</a><hr class="menuSeparator"><a href="http://code.google.com/more/" style="display: block;" class="menuItem">Find developer products...</a><a href="http://code.google.com/hosting/" style="display: block;" class="menuItem">Find open source projects...</a></div></div></body></html>

@@ -1,0 +1,6 @@
+version: 1.4.1
+apkFileName: DroidBoxTests.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1

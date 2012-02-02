@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html><head>
+
+
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+
+
+ <link rel="icon" type="image/vnd.microsoft.icon" href="http://www.gstatic.com/codesite/ph/images/phosting.ico">
+ 
+ 
+ <link rel="canonical" href="http://code.google.com/p/androguard/wiki/Similarity">
+ 
+ <script src="Similarity_files/googleapis.js"></script><script type="text/javascript">
+ 
+ 
+ 
+ 
+ var codesite_token = null;
+ 
+ 
+ var CS_env = {"profileUrl":null,"token":null,"assetHostPath":"http://www.gstatic.com/codesite/ph","domainName":null,"assetVersionPath":"http://www.gstatic.com/codesite/ph/17856622392391512803","projectHomeUrl":"/p/androguard","relativeBaseUrl":"","projectName":"androguard","loggedInUserEmail":null};
+ var _gaq = _gaq || [];
+ _gaq.push(
+ ['siteTracker._setAccount', 'UA-18071-1'],
+ ['siteTracker._trackPageview']);
+ 
+ _gaq.push(
+ ['projectTracker._setAccount', 'UA-22757360-2'],
+ ['projectTracker._trackPageview']);
+ 
+ 
+ </script>
+ 
+ 
+ <title>Similarity - 
+ androguard -
+ 
+ 
+ Reverse engineering, Malware and goodware analysis of Android applications ... and more ! - Google Project Hosting
+ </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ 
+ <meta name="ROBOTS" content="NOARCHIVE">
+ 
+ <link type="text/css" rel="stylesheet" href="Similarity_files/core.css">
+ 
+ <link type="text/css" rel="stylesheet" href="Similarity_files/ph_detail.css">
+ 
+ 
+ 
+ <link type="application/atom+xml" rel="alternate" href="http://code.google.com/feeds/p/androguard/hgchanges/basic?repo=wiki&amp;path=/Similarity.wiki">
+ 
+ 
+<!--[if IE]>
+ <link type="text/css" rel="stylesheet" href="http://www.gstatic.com/codesite/ph/17856622392391512803/css/d_ie.css" >
+<![endif]-->
+ <style type="text/css">
+ .menuIcon.off { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -42px }
+ .menuIcon.on { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 -28px }
+ .menuIcon.down { background: no-repeat url(http://www.gstatic.com/codesite/ph/images/dropdown_sprite.gif) 0 0; }
+ 
+ 
+ #maincol {
+ padding-top: 0;
+ padding-bottom: 0;
+ }
+
+ 
+ </style>
+<script src="Similarity_files/ga.js" async="" type="text/javascript"></script></head><body class="t6">
+<script type="text/javascript">
+ (function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+ })();
+</script>
+<div class="headbg">
+
+ <div id="gaia">
+ 
+
+ <span>
+ 
+ <a href="#" id="projects-dropdown" onclick="return false;"><u>My favorites</u> <small>▼</small></a>
+ | <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity" onclick="_CS_click('/gb/ph/signin');"><u>Sign in</u></a>
+ 
+ </span>
+
+ </div>
+
+ <div class="gbh" style="left: 0pt;"></div>
+ <div class="gbh" style="right: 0pt;"></div>
+ 
+ 
+ <div style="height: 1px;"></div>
+<!--[if lte IE 7]>
+<div style="text-align:center;">
+Your version of Internet Explorer is not supported. Try a browser that
+contributes to open source, such as <a href="http://www.firefox.com">Firefox</a>,
+<a href="http://www.google.com/chrome">Google Chrome</a>, or
+<a href="http://code.google.com/chrome/chromeframe/">Google Chrome Frame</a>.
+</div>
+<![endif]-->
+
+
+
+
+ <table style="padding: 0px; margin: 0px 0px 10px; width: 100%;" itemscope="" itemtype="http://schema.org/CreativeWork" cellpadding="0" cellspacing="0">
+ <tbody><tr style="height: 58px;">
+ 
+ <td id="plogo">
+ <link itemprop="url" href="http://code.google.com/p/androguard">
+ <a href="http://code.google.com/p/androguard/">
+ 
+ 
+ <img src="Similarity_files/logo.png" alt="Logo" itemprop="image">
+ 
+ </a>
+ </td>
+ 
+ <td style="padding-left: 0.5em;">
+ 
+ <div id="pname">
+ <a href="http://code.google.com/p/androguard/"><span itemprop="name">androguard</span></a>
+ </div>
+ 
+ <div id="psum">
+ <a id="project_summary_link" href="http://code.google.com/p/androguard/"><span itemprop="description">Reverse engineering, Malware and goodware analysis of Android applications ... and more !</span></a>
+ 
+ </div>
+ 
+ 
+ </td>
+ <td style="white-space: nowrap; text-align: right; vertical-align: bottom;">
+ 
+ <form action="/hosting/search">
+ <input size="30" name="q" type="text">
+ 
+ <input name="projectsearch" value="Search projects" type="submit">
+ </form>
+ 
+ </td></tr>
+ </tbody></table>
+
+</div>
+
+ 
+<div id="mt" class="gtb"> 
+ <a href="http://code.google.com/p/androguard/" class="tab ">Project&nbsp;Home</a>
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/downloads/list" class="tab ">Downloads</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/w/list" class="tab active">Wiki</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/issues/list" class="tab ">Issues</a>
+ 
+ 
+ 
+ 
+ 
+ <a href="http://code.google.com/p/androguard/source/checkout" class="tab ">Source</a>
+ 
+ 
+ 
+ 
+ 
+ <div class="gtbc"></div>
+</div>
+<table class="st" width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+ <tbody><tr>
+ 
+ 
+ 
+ <td class="subt">
+ <div class="issueDetail">
+<div class="isf">
+ 
+ <span class="inIssueList"> 
+ <span>Search</span>
+ <form action="/p/androguard/w/list" method="GET" style="display: inline;">
+ <select id="can" name="can">
+ <option disabled="disabled">Search within:</option>
+ 
+ <option value="1">&nbsp;All wiki pages</option>
+ <option value="3">&nbsp;Featured pages</option>
+ <option value="2" selected="selected">&nbsp;Current pages</option>
+ 
+ 
+ <option value="4">&nbsp;Deprecated pages</option>
+ 
+ </select>
+ <span>for</span>
+ <span id="qq"><input size="38" id="searchq" name="q" autocomplete="off" type="text"></span>
+ 
+ 
+ 
+ <input value="Search" type="submit">
+ </form>
+ </span>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+</div>
+</div>
+
+ </td>
+ 
+ 
+ 
+ 
+ 
+ 
+ <td class="bevel-right" valign="top" align="right"></td>
+ </tr>
+</tbody></table>
+
+
+<script type="text/javascript">
+ var cancelBubble = false;
+ function _go(url) { document.location = url; }
+</script>
+<div id="maincol">
+
+ 
+<!-- IE -->
+
+
+
+
+
+
+
+ <style type="text/css">
+ .delcom { background: #e8e8e8 }
+ .commentcontent {
+ margin: 2em;
+ padding: 0px 10px;
+ width: 66em;
+ }
+ .artifactcomment {
+ border-top: 3px solid #c3d9ff;
+ }
+ #commentform {
+ border-top: 3px solid #c3d9ff;
+ }
+ </style>
+
+<div id="wikipage">
+<table>
+ <tbody><tr>
+ 
+ 
+ <td style="vertical-align: top; padding-left: 5px;">
+ 
+ <div id="wikiheader">
+ 
+ <span style="font-size: 120%; font-weight: bold;">Similarity</span>
+ &nbsp;
+ <div> 
+ 
+ 
+ <br>
+ 
+ <a class="label" style="padding-top: 2px;" href="http://code.google.com/p/androguard/w/list?q=label:Featured" title="Listed on project home page">Featured</a>
+ 
+ 
+ 
+ <div id="wikiauthor" style="float: right;">
+ Updated <span title="Thu Sep  1 08:07:18 2011">
+ Sep 1, 2011</span>
+ 
+ by <a style="white-space: nowrap;" href="http://code.google.com/u/115278253733459388131/">anthony....@gmail.com</a>
+ 
+ </div>
+ </div>
+ </div>
+ 
+ <div id="wikicontent">
+ <div class="vt" id="wikimaincol">
+ <blockquote><ul><li><a href="#Similarity">Similarity</a></li><ul><li><a href="#LibSIMILARITY">LibSIMILARITY</a></li><li><a href="#Similarity_of_applications_%28aka_rip-off_indicator%29">Similarity of applications (aka rip-off indicator)</a></li><ul><li><a href="#Androsim">Androsim</a></li><li><a href="#Androcsign/Androsign">Androcsign/Androsign</a></li></ul><li><a href="#Diffing_of_applications">Diffing of applications</a></li></ul></ul> 
+</blockquote><h1><a name="Similarity"></a>Similarity<a href="#Similarity" class="section_anchor"></a></h1><h2><a name="LibSIMILARITY"></a>LibSIMILARITY<a href="#LibSIMILARITY" class="section_anchor"></a></h2><p>In this library you can find different functions to compare elements : </p><ul><li>NCD </li><li>NCS </li><li>CMID </li><li>Entropy </li></ul><p>In order to compile the library, you must install the following depedencies : </p><ul><li><a href="http://www.bzip.org/" rel="nofollow">bz2</a> library development </li><li><a href="http://zlib.net/" rel="nofollow">zlib</a> library development </li><li><a href="http://tukaani.org/xz/" rel="nofollow">xz</a> library development </li><li><a href="http://code.google.com/p/snappy/" rel="nofollow">snappy</a> library development </li></ul><p>Compilation : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard</span><span class="pun">/</span><span class="pln">classification</span><span class="pun">/</span><span class="pln">libsimilarity$ make</span></pre><p>This library can be used directly, but there is a python wrapper (with caches) : </p><pre class="prettyprint"><span class="kwd">from</span><span class="pln"> similarity </span><span class="kwd">import</span><span class="pln"> </span><span class="pun">*</span><span class="pln"><br><br>n </span><span class="pun">=</span><span class="pln"> SIMILARITY</span><span class="pun">(</span><span class="pln"> </span><span class="str">"classification/libsimilarity/libsimilarity.so"</span><span class="pln"> </span><span class="pun">)</span></pre><p>Available functions : </p><ul><li>ncd </li><li>cmid </li><li>ncs </li><li>entropy </li></ul><p>So if you would like the distance between two objects with NCD : </p><pre class="prettyprint"><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">print</span><span class="pln"> n</span><span class="pun">.</span><span class="pln">ncd</span><span class="pun">(</span><span class="str">"F1M2M2M4F1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"F2M3M3M1F2"</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">(</span><span class="lit">0.4375</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span></pre><p>or the entropy of an object : </p><pre class="prettyprint"><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">print</span><span class="pln"> n</span><span class="pun">.</span><span class="pln">entropy</span><span class="pun">(</span><span class="str">"F1M2M2M4F1"</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">(</span><span class="lit">2.2464394569396973</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span></pre><p>You can change the type of compression (default : zlib) : </p><pre class="prettyprint"><span class="com"># ZLIB_COMPRESS, BZ2_COMPRESS, LZMA_COMPRESS, XZ_COMPRESS, SNAPPY_COMPRESS</span><span class="pln"><br><br>n</span><span class="pun">.</span><span class="pln">set_compress_type</span><span class="pun">(</span><span class="pln"> SNAPPY_COMPRESS </span><span class="pun">)</span></pre><h2><a name="Similarity_of_applications_(aka_rip-off_indicator)"></a>Similarity of applications (aka rip-off indicator)<a href="#Similarity_of_applications_%28aka_rip-off_indicator%29" class="section_anchor"></a></h2><h3><a name="Androsim"></a>Androsim<a href="#Androsim" class="section_anchor"></a></h3><p>It's possible to measure the similarity of two android applications to : </p><ul><li>check if your application has been stolen by someone (useful for developers), </li><li>check if you use a correct obfuscator (proguard :) ?), </li><li>check the new methods injected by a malware. </li></ul><p>You can use the tool androsim.py to check that automatically. </p><p>With two quite identical application : <img src="Similarity_files/sim.png"> </p><p>The display is very basic, you can view : </p><ul><li>DIFF METHODS : how many methods have been really compared (they are quite the same), </li><li>NEW METHODS : how many methods are totaly new in the second application, </li><li>MATCH METHODS : how many methods matched perfectly, </li><li>DELETE METHODS : how many methods have been deleted in the first application. </li></ul><p>And the two latest lines are : </p><ul><li>the marks to calculate the final score (0.0 is a good mark, 1.0 not), </li><li>the final percentage score (100.0 indicates that the applications are the same). </li></ul><p>two different applications : </p><p><img src="Similarity_files/sim1.png"> </p><p>with an original application and the application "obfuscated" by proguard : <img src="Similarity_files/sim2.png"> </p><p>with infected applications : <img src="Similarity_files/sim3.png"> <img src="Similarity_files/sim4.png"> </p><p>These two applications have been infected by a malware, that's why we can see that we have : </p><ul><li>identical methods, </li><li>new methods (the methods of the malware !!). </li></ul><h3><a name="Androcsign/Androsign"></a>Androcsign/Androsign<a href="#Androcsign/Androsign" class="section_anchor"></a></h3><p>It's
+ also possible to detect if your application has been stolen by someone 
+else on more larger datasets (contrary to the previous method which is 
+more slow but covering all your application). </p><p><strong>Before using this technique, you must read <a href="http://code.google.com/p/androguard/wiki/DetectingApplications" rel="nofollow">1</a> and <a href="http://code.google.com/p/androguard/wiki/Signature" rel="nofollow">2</a>.</strong> </p><p>For example, we will take the following DEX <a href="http://code.google.com/p/androguard/source/browse/examples/obfu/classes_tc.dex" rel="nofollow">file</a>, which is your application (the source code of this DEX file is located <a href="http://code.google.com/p/androguard/source/browse/#hg%2Fexamples%2Fandroid%2FTC%2Fsrc%2Forg%2Ft0t0%2Fandroguard%2FTC" rel="nofollow">here</a>). </p><p>The
+ first thing to do is to isolate your important methods to add them in 
+your database to find them in suspicious samples; because in your whole 
+software you will have useless parts. So it's an important step, you 
+must know which methods or classes are the most important. </p><p>In our
+ example we have the method T1 in the class file TCMod1 which is our 
+more important method, so we create a signature file like this : </p><pre class="prettyprint"><span class="pun">[</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"SAMPLE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"examples/obfu/classes_tc.dex"</span><span class="pln"> </span><span class="pun">},</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"BASE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"AndroidOS"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"NAME"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"CLASSES TC"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"SIGNATURE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="str">"TYPE"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"METHSIM"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"CN"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"Lorg/t0t0/androguard/TC/TCMod1;"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"MN"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"T1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"D"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"()V"</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="pun">],</span><span class="pln"> </span><span class="str">"BF"</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="str">"0"</span><span class="pln"> </span><span class="pun">}</span><span class="pln"> </span><span class="pun">]</span></pre><p>And we can add the signature to our empty database : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androcsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i examples</span><span class="pun">/</span><span class="pln">obfu</span><span class="pun">/</span><span class="pln">classes_tc</span><span class="pun">.</span><span class="pln">sign </span><span class="pun">-</span><span class="pln">o examples</span><span class="pun">/</span><span class="pln">obfu</span><span class="pun">/</span><span class="pln">dbsample<br></span><span class="pun">[{</span><span class="pln">u</span><span class="str">'CLASSES TC'</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[[[</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'QltdQltGMEldQltGMEYxRjBHXUJbRjBQMFAxU1AxRjBTUDJQMVAxUDFGMFAwUDFTUDFTUDJQMVAxUDFdQltJXUJbRjBHXUJbRjBQMFAxU1AxU1AyUDFQMVAxRjBGMUYwUDBQMVNQMUYwU1AyUDFQMVAxXUJbSV1CW11CW0YwSV1CW0YwRjFHXUJbR1AwXUJbUDBQMlAyRjBQMFAxU1AxRjBTUDJQMVAxUDFGMFAwUDFTUDFTUDJQMVAxUDFGMFAwUDFTUDFTUDJQMVAxUDFQMFAyUDJGMF1CW0YwRjFGMEldQltGMFAwUDFTUDFGMFNQMlAxUDFQMVAwUDJQMlAwUDJQMlJdQltd'</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3.1086018085479736</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1.6915500164031982</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.4729580879211426</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4.8005590438842773</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0.0</span><span class="pun">]],</span><span class="pln"> u</span><span class="str">'0'</span><span class="pun">]}]</span></pre><p>After that it's possible to search if your signature is present, in many samples : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">d apks</span><span class="pun">/</span><span class="pln">mixe</span><span class="pun">/</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b examples</span><span class="pun">/</span><span class="pln">obfu</span><span class="pun">/</span><span class="pln">dbsample </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig <br></span><span class="lit">594ebcc14a163b86222bd09adfe95498da81ceaeb772b706339d0a24858b1267</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>d615dd181124ca0fde3d4785786586c3593a61d2c25c567ff93b230eb6d3a97a </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>c8518d4d64a84099abfadc25eb1516957898326546b8e4bfb88066912a06dd56 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>c6eb43f2b7071bbfe893fc78419286c3cb7c83ce56517bd281db5e7478caf995 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">35bda16e09b2e789602f07c08e0ba2c45393a62c6e52aa081b5b45e2e766edcb</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">1dd0ccbb47e46144a5e68afc619098730f561741618d89200ac9c06c460bf6e4</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>com</span><span class="pun">.</span><span class="pln">rovio</span><span class="pun">.</span><span class="pln">angrybirdsseasons</span><span class="pun">-</span><span class="lit">1.apk</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>c1a94e9fd0a6bda7e5ead89d8ef9ee064aeccdaf65238bf604f33e987a8656b9 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>e5b775383f7a16d96f55701d72a8c87ca27e991d600cb4254bb47dfef556fd18 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>add10b0368753ec38de0dca15550d824ac141f0c86f2f123f30551bd82e82415 </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">137274dccff625eb1f9d647b09ed50cdfa8f86fe1a893d951f1f04e0d91f85bc</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">7f0aaf040b475085713b09221c914a971792e1810b0666003bf38ac9a9b013e6</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">03fbe528af4e8d17aef4b8db67f96f2905a7f52e0342826aeb3ec21b16dfc283</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">76e91e1f9cc3422c333e51b65bb98dd50d00f1f45a15d2008807b06c125e651a</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">7a21caba58a033a696265d2f1a9c421a84293cbba19ed890be3cc26ac584b021</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>c687e2f0b4992bd368df0c24b76943c99ac3eb9e4e8c13422ebf1a872a06070a </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>zimperlich</span><span class="pun">.</span><span class="pln">apk </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br>cf9ebba0501079d61cff24d00e2de662c591039d8ff7f0c982e2e2778d6cf49b </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">7513c6a11b88b87f528b88624d1b198b5bcc325864b328e32cc0d790b0bfc1c4</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> </span><span class="kwd">None</span><span class="pln"><br></span><span class="lit">05ded485fca28f742e94d21172d92ebd77b796a16ed052ced1cf2d0ec184cfd6</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC</span></pre><p>Even if your function is obfuscated with android/java obfuscators, it's possible to find your signature : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androsign</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">d examples</span><span class="pun">/</span><span class="pln">obfu</span><span class="pun">/</span><span class="pln"> </span><span class="pun">-</span><span class="pln">b examples</span><span class="pun">/</span><span class="pln">obfu</span><span class="pun">/</span><span class="pln">dbsample </span><span class="pun">-</span><span class="pln">c signatures</span><span class="pun">/</span><span class="pln">dbconfig <br>classes_tc</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC<br>classes_tc_mark1</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC<br>classes_tc_diff_dasho</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC<br>classes_tc_dasho</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC<br>classes_tc_diff</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC<br>classes_tc_proguard</span><span class="pun">.</span><span class="pln">dex </span><span class="pun">:</span><span class="pln"> </span><span class="pun">----&gt;</span><span class="pln"> CLASSES TC</span></pre><h2><a name="Diffing_of_applications"></a>Diffing of applications<a href="#Diffing_of_applications" class="section_anchor"></a></h2><p>It's
+ possible to perform diff betweens two android applications. For 
+example, the 15th April 2011, AndroidPolice released a new security 
+vulnerability in Skype (version 1.0.0.831) for Android. This 
+vulnerability expose your name, phone number, chat logs to all installed
+ applications.\\ </p><p>The security bug is very simple, it is an incorrect usage of permissions to open files (from androidpolice.com) : </p><pre class="prettyprint"><span class="com"># ls -l /data/data/com.skype.merlin_mecha/files/jcaseap &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="pln"><br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp;</span><span class="lit">331776</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">13</span><span class="pln"> </span><span class="lit">00</span><span class="pun">:</span><span class="lit">08</span><span class="pln"> main</span><span class="pun">.</span><span class="pln">db <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp;</span><span class="lit">119528</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">13</span><span class="pln"> </span><span class="lit">00</span><span class="pun">:</span><span class="lit">08</span><span class="pln"> main</span><span class="pun">.</span><span class="pln">db</span><span class="pun">-</span><span class="pln">journal <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; </span><span class="lit">40960</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">11</span><span class="pln"> </span><span class="lit">14</span><span class="pun">:</span><span class="lit">05</span><span class="pln"> keyval</span><span class="pun">.</span><span class="pln">db <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; &nbsp;</span><span class="lit">3522</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">12</span><span class="pln"> </span><span class="lit">23</span><span class="pun">:</span><span class="lit">39</span><span class="pln"> config</span><span class="pun">.</span><span class="pln">xml <br>drwxrwxrwx app_152 &nbsp;app_152 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">11</span><span class="pln"> </span><span class="lit">14</span><span class="pun">:</span><span class="lit">05</span><span class="pln"> voicemail <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="lit">0</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">11</span><span class="pln"> </span><span class="lit">14</span><span class="pun">:</span><span class="lit">05</span><span class="pln"> config</span><span class="pun">.</span><span class="pln">lck <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; </span><span class="lit">61440</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">13</span><span class="pln"> </span><span class="lit">00</span><span class="pun">:</span><span class="lit">08</span><span class="pln"> bistats</span><span class="pun">.</span><span class="pln">db <br>drwxrwxrwx app_152 &nbsp;app_152 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">12</span><span class="pln"> </span><span class="lit">21</span><span class="pun">:</span><span class="lit">49</span><span class="pln"> chatsync <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; </span><span class="lit">12824</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">11</span><span class="pln"> </span><span class="lit">14</span><span class="pun">:</span><span class="lit">05</span><span class="pln"> keyval</span><span class="pun">.</span><span class="pln">db</span><span class="pun">-</span><span class="pln">journal <br></span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln"> app_152 &nbsp;app_152 &nbsp; &nbsp; </span><span class="lit">33344</span><span class="pln"> </span><span class="lit">2011</span><span class="pun">-</span><span class="lit">04</span><span class="pun">-</span><span class="lit">13</span><span class="pln"> </span><span class="lit">00</span><span class="pun">:</span><span class="lit">08</span><span class="pln"> bistats</span><span class="pun">.</span><span class="pln">db</span><span class="pun">-</span><span class="pln">journal</span></pre><p>So,
+ it is possible for another application to access to all information of 
+your skype account, like account balance, full name, date of birth, 
+city/state/country, home phone, office phone, cell phone, email 
+addresses, your webpage, your bio, instant messages. Few days after this
+ vulnerability, Skype release a new version (1.0.0.983) which fixed this
+ security bug. </p><p>It is a good example to test our algorithm in a 
+real case like skype because this application is not small and it is an 
+interesting case of reverse engineering. </p><p>We can quickly identify how many functions are : <img src="Similarity_files/diff_skype_1.png"> </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androdiff</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i apks</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">831.apk</span><span class="pln"> apks</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">983.apk</span><span class="pln"> <br>DIFF METHODS </span><span class="pun">:</span><span class="pln"> </span><span class="lit">165</span><span class="pln"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br>NEW METHODS </span><span class="pun">:</span><span class="pln"> </span><span class="lit">13</span><span class="pln"><br>MATCH METHODS </span><span class="pun">:</span><span class="pln"> </span><span class="lit">8038</span><span class="pln"><br>DELETE METHODS </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln"><br>DIFF METHODS </span><span class="pun">:</span><span class="pln"><br></span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">a</span><span class="pun">;</span><span class="pln"> a </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> </span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">a</span><span class="pun">;</span><span class="pln"> a </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="lit">0.45658557117</span><span class="pln"><br>&nbsp; &nbsp; DIFF BASIC BLOCKS </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; a</span><span class="pun">-</span><span class="pln">BB@0x0 &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> a</span><span class="pun">-</span><span class="pln">BB@0x0 </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.10067114234</span><span class="pln"><br>&nbsp; &nbsp; NEW BASIC BLOCKS </span><span class="pun">:</span><span class="pln"><br><br></span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">a</span><span class="pun">;</span><span class="pln"> c </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> </span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">a</span><span class="pun">;</span><span class="pln"> c </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="lit">0.438461545855</span><span class="pln"><br>&nbsp; &nbsp; DIFF BASIC BLOCKS </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; c</span><span class="pun">-</span><span class="pln">BB@0x0 &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> c</span><span class="pun">-</span><span class="pln">BB@0x0 </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0769230797887</span><span class="pln"><br>&nbsp; &nbsp; NEW BASIC BLOCKS </span><span class="pun">:</span><span class="pln"><br><br></span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">m</span><span class="pun">;</span><span class="pln"> c </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">with</span><span class="pln"> </span><span class="typ">Lb</span><span class="pun">/</span><span class="pln">m</span><span class="pun">;</span><span class="pln"> c </span><span class="pun">()</span><span class="typ">Ljava</span><span class="pun">/</span><span class="pln">lang</span><span class="pun">/</span><span class="typ">String</span><span class="pun">;</span><span class="pln"> </span><span class="lit">0.100917428732</span><span class="pln"><br>&nbsp; &nbsp; DIFF BASIC BLOCKS </span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; c</span><span class="pun">-</span><span class="pln">BB@0xc &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> c</span><span class="pun">-</span><span class="pln">BB@0xc </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0571428574622</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; c</span><span class="pun">-</span><span class="pln">BB@0x20 &nbsp;</span><span class="pun">---&gt;</span><span class="pln"> c</span><span class="pun">-</span><span class="pln">BB@0x20 </span><span class="pun">:</span><span class="pln"> </span><span class="lit">0.0675675645471</span><span class="pln"><br>&nbsp; &nbsp; NEW BASIC BLOCKS </span><span class="pun">:</span></pre><p>with all details : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androdiff</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">i apks</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">831.apk</span><span class="pln"> apks</span><span class="pun">/</span><span class="pln">com</span><span class="pun">.</span><span class="pln">skype</span><span class="pun">.</span><span class="pln">raider_1</span><span class="pun">.</span><span class="lit">0.0</span><span class="pun">.</span><span class="lit">983.apk</span><span class="pln"> </span><span class="pun">-</span><span class="pln">d<br></span><span class="pun">[...]</span></pre><p>It's also possible to have directly the <a href="http://androguard.googlecode.com/files/skype_diff.pickle" rel="nofollow">diff</a> in python pickle, and to load it in androguard : </p><pre class="prettyprint"><span class="pln">desnos@destiny</span><span class="pun">:~/</span><span class="pln">androguard$ </span><span class="pun">./</span><span class="pln">androlyze</span><span class="pun">.</span><span class="pln">py </span><span class="pun">-</span><span class="pln">s<br></span><span class="typ">Androlyze</span><span class="pln"> version </span><span class="lit">0.2</span><span class="pln"><br><br></span><span class="typ">In</span><span class="pln"> </span><span class="pun">[</span><span class="lit">1</span><span class="pun">]:</span><span class="pln"> d </span><span class="pun">=</span><span class="pln"> load_session</span><span class="pun">(</span><span class="pln"> </span><span class="str">"./skype_diff.pickle"</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br></span><span class="typ">In</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">]:</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">d</span><span class="pun">.</span><span class="pln">get_diff_methods</span><span class="pun">())</span><span class="pln"><br></span><span class="typ">Out</span><span class="pun">[</span><span class="lit">3</span><span class="pun">]:</span><span class="pln"> </span><span class="lit">165</span><span class="pln"><br></span><span class="typ">In</span><span class="pln"> </span><span class="pun">[</span><span class="lit">4</span><span class="pun">]:</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">d</span><span class="pun">.</span><span class="pln">get_new_methods</span><span class="pun">())</span><span class="pln"><br></span><span class="typ">Out</span><span class="pun">[</span><span class="lit">4</span><span class="pun">]:</span><span class="pln"> </span><span class="lit">14</span><span class="pln"><br></span><span class="typ">In</span><span class="pln"> </span><span class="pun">[</span><span class="lit">5</span><span class="pun">]:</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">d</span><span class="pun">.</span><span class="pln">get_delete_methods</span><span class="pun">())</span><span class="pln"><br></span><span class="typ">Out</span><span class="pun">[</span><span class="lit">5</span><span class="pun">]:</span><span class="pln"> </span><span class="lit">7</span><span class="pln"><br></span><span class="typ">In</span><span class="pln"> </span><span class="pun">[</span><span class="lit">6</span><span class="pun">]:</span><span class="pln"> len</span><span class="pun">(</span><span class="pln">d</span><span class="pun">.</span><span class="pln">get_match_methods</span><span class="pun">())</span><span class="pln"><br></span><span class="typ">Out</span><span class="pun">[</span><span class="lit">6</span><span class="pun">]:</span><span class="pln"> </span><span class="lit">8038</span></pre><p>We
+ analyzed the 165 methods, by searching methods related to file 
+permissions, by using the java API or directly with chmod program. 
+Inside the 165 methods, most of them are related to simple constant 
+modification but we can identify a method really close to another one 
+(with the same name) which manipulate files : </p><ul><li>Lcom/skype/ipc/SkypeKitRunner; run ()V with Lcom/skype/ipc/SkypeKitRunner; run ()V 0.269383959472 </li></ul><p>This method has four modified basic blocks, but only three basic blocks are more interesting : <img src="Similarity_files/diff_skype_2.png"> </p><p>The integer value passed (it is the operating mode) to the method openFileOutput has been changed from 3 to 0 : </p><ul><li>public abstract FileOutputStream openFileOutput (String name, int mode) </li></ul><p>where 3 and 0 are respectively : </p><ul><li>MODE_WORLD_READABLE
+ (allow all other applications to have read access to the created file) 
+and MODE_WORLD_WRITEABLE (allow all other applications to have write 
+access to the created file), </li><li>MODE_PRIVATE (the default mode, 
+where the created file can only be accessed by the calling application 
+(or all applications sharing the same user ID)). </li></ul><p><img src="Similarity_files/diff_skype_3.png"> </p><p>In this basic block, the first argument of chmod has been changed from 777 to 750 : </p><ul><li>RWX, RWX, RWX </li><li>RWX, R-X, --- </li></ul><p><img src="Similarity_files/diff_skype_4.png"> </p><p>And
+ in the last modified basic block, there is a new call to a new method 
+which fix all files in the context directory of the application : </p><ul><li>Lcom/skype/ipc/SkypeKitRunner; (V fixPermissions </li></ul><p>which fix all permissions (so patch permission from the previous version) to : </p><ul><li>RWX --- --- for a directory, </li><li>RW- --- -- for a file. </li></ul><p><img src="Similarity_files/diff_skype_5.png"> </p>
+ </div>
+ </div>
+ </td></tr><tr>
+</tr></tbody></table>
+ </div>
+
+
+ 
+ 
+ 
+ 
+ <br>
+ <div class="artifactcomment">
+ <span class="indicator">►</span> <a href="https://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity&amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity">Sign in</a> to add a comment
+ </div>
+ 
+ 
+ 
+ 
+ <form name="delcom" action="../w/delComment.do" method="POST">
+ <input name="sequence_num" value="" type="hidden">
+ <input name="create_time" value="" type="hidden">
+ <input name="mode" value="" type="hidden">
+ <input name="pagename" value="Similarity" type="hidden">
+ <input name="token" value="" type="hidden">
+ </form>
+
+
+
+ <script src="Similarity_files/prettify.js"></script>
+ <script type="text/javascript">
+ prettyPrint();
+ </script>
+
+<script type="text/javascript" src="Similarity_files/dit_scripts.js"></script>
+
+
+<script type="text/javascript" src="Similarity_files/plusone.js">
+</script>
+
+  
+ 
+ 
+ <script type="text/javascript" src="Similarity_files/ph_core.js"></script>
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="Similarity_files/codesite_product_dictionary_ph.js"></script>
+</div> 
+<div id="footer" dir="ltr">
+ <div class="text">
+ ©2011 Google -
+ <a href="http://code.google.com/projecthosting/terms.html">Terms</a> -
+ <a href="http://www.google.com/privacy.html">Privacy</a> -
+ <a href="http://code.google.com/p/support/">Project Hosting Help</a>
+ </div>
+</div>
+ <div class="hostedBy" style="margin-top: -20px;">
+ <span style="vertical-align: top;">Powered by <a href="http://code.google.com/projecthosting/">Google Project Hosting</a></span>
+ </div>
+ 
+ 
+
+
+ 
+ <div style="display: none;" id="menuDiv-projects-dropdown" class="menuDiv instance0"><div class="menuCategory controls"><a href="http://www.google.com/accounts/ServiceLogin?service=code&amp;ltmpl=phosting&amp;continue=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity&amp;amp;followup=http%3A%2F%2Fcode.google.com%2Fp%2Fandroguard%2Fwiki%2FSimilarity" style="display: block;" class="menuItem">Sign in to see your favorites</a><hr class="menuSeparator"><a href="http://code.google.com/more/" style="display: block;" class="menuItem">Find developer products...</a><a href="http://code.google.com/hosting/" style="display: block;" class="menuItem">Find open source projects...</a></div></div></body></html>
