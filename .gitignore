@@ -2,12 +2,18 @@
 #this belongs to the ARE VM from the Honeynet Project
 ########################################################
 
+#TODO: This file does not work. a lot of subfolters 
+#	will not be tracked.
+#      If you want to add a file, you havt to force git to ignore this file. 
+
+
 #Ignore everything
 #**/*
 #tools/*
 #*.txt
 .*
 *
+
 #But do not ignore ARE things
 #Desktop/README.txt
 !Desktop/
@@ -28,4 +34,10 @@ Desktop/*
 !deps/
 !deps/*
 !deps/**/*
+!deps/**
+
+#Android SDK are to big for a repo
+tools/android
+tools/android/*
+tools/android/**/*
 
